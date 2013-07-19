@@ -43,15 +43,17 @@
 //        [str appendFormat: @"%@ === %i\n", [NSString localizedNameOfStringEncoding:encoding], encoding];
 //        NSLog(@"%@",str);
 //    }
-//    
+//
+    
+    
     NSString *rs = convertNString2UnicodeHex(@"网知道");
-    NSLog(@"rs:%@",rs);
-    
-    rs = convertNString2UTF8Hex(@"网知道");
-    NSLog(@"rs:%@",rs);
-    
-    rs = convertNString2GB2000Hex(@"网知道");
-    NSLog(@"rs:%@",rs);
+//    NSLog(@"rs:%@",rs);
+//    
+//    rs = convertNString2UTF8Hex(@"网知道");
+//    NSLog(@"rs:%@",rs);
+//    
+//    rs = convertNString2GB2000Hex(@"网知道");
+//    NSLog(@"rs:%@",rs);
     
 
     
@@ -59,18 +61,38 @@
 //    NSString *result = [NSString stringWithCString:hex encoding:NSUTF8StringEncoding];
 
     
-    char *t = [@"e7bd91" UTF8String];
     
     NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-   rs = hexStrToText(@"cdf8",enc);
-    NSLog(@"rs:%@",rs);
+//   rs = hexStrToText(@"cdf8",enc);
+//    char *Cstring = "\xcd\xf8";
+//  rs = [[NSString alloc] initWithCString:Cstring encoding:enc];  
+//    NSLog(@"rs:%@",rs);
+    
+    rs = hexStrToText(@"cdf8",enc);
+        NSLog(@"rs:%@",rs);
     
     rs = hexStrToText(@"5   17fE 577",NSUnicodeStringEncoding);
     NSLog(@"rs:%@",rs);
 
      rs = hexStrToText(@"\\xe7bd91e79fa5",NSUTF8StringEncoding);
         NSLog(@"rs:%@",rs);
+    
+    
     //NSLog(@"result:%@",result);
+    
+    char *Cstring = "\xe7\xbd\x91\xe7\x9f\xa5";
+    
+   NSString *astring = [[NSString alloc] initWithCString:Cstring encoding:NSUTF8StringEncoding];
+    
+    Cstring = "\xe5\x77\x53\x90 ";
+    astring = [[NSString alloc] initWithCString:Cstring encoding:NSUnicodeStringEncoding];
+    NSLog(@"astring:%@",astring);
+    
+    Cstring = "\xcd\xf8";
+    enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    astring = [[NSString alloc] initWithCString:Cstring encoding:enc];
+    NSLog(@"astring:%@",astring);
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -63,8 +63,8 @@ NSString * convertNString2GB2000Hex(NSString *inputText)
 
 char * convertHexStrToBytes(const char *str)
 {
-    char *dest = alloca(strlen(str)/2 +1);
-    memset(dest, 0, strlen(str)/2 +1);
+    char *dest = malloc(strlen(str)/2 +3);
+    memset(dest, 0, strlen(str)/2 +3);
     int j = 0,temp = 0;
     for(int i=0;i<strlen(str);i++)
     {
@@ -94,18 +94,39 @@ char * convertHexStrToBytes(const char *str)
 
 NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
 {
-    char *bytes = NULL;
+    char  *bytes ;
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"\\" withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"//" withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"x" withString:@""];    
     str = [str lowercaseString];
+    
     bytes  = convertHexStrToBytes([str UTF8String]);
 
 //    NSString *result = [NSString stringWithCString:bytes encoding:encoding];
     
-    NSString *result = [[NSString alloc] initWithCString:bytes encoding:encoding]; //可以打印unicode
+  //  char *   newbytes;
+    char *   newbytes = "\xcd\xf8";
     
+//    if(!strcmp(bytes, newbytes))
+//    {
+//        NSLog(@"same");
+//    }
+//    else
+//    {
+//        NSLog(@"not the same");
+//    }
+    
+//    bytes = malloc(strlen(newbytes)+1);
+//    
+//    memset(bytes, 0, strlen(newbytes)+1);
+//    
+//    strcpy(bytes,newbytes);
+    
+    NSString *result = [[NSString alloc] initWithCString:bytes encoding:encoding]; //可以打印unicode,
+
+    NSLog(@"result");
+
     return result;
 }
 
