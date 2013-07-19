@@ -44,36 +44,31 @@
 //        NSLog(@"%@",str);
 //    }
 //    
-    NSString *rs = convertNString2UnicodeHex(@"网国栋");
+    NSString *rs = convertNString2UnicodeHex(@"网知道");
     NSLog(@"rs:%@",rs);
     
-    rs = convertNString2UTF8Hex(@"网国栋");
+    rs = convertNString2UTF8Hex(@"网知道");
     NSLog(@"rs:%@",rs);
     
-    rs = convertNString2GB2000Hex(@"网国栋");
+    rs = convertNString2GB2000Hex(@"网知道");
     NSLog(@"rs:%@",rs);
     
+
+    
+//    const char *hex = "\xe7\xbd\x91\xe7\x9f\xa5\x00\x00\x00";
+//    NSString *result = [NSString stringWithCString:hex encoding:NSUTF8StringEncoding];
+
+    
+    char *t = [@"e7bd91" UTF8String];
+    
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+   rs = hexStrToText(@"cdf8",enc);
     NSLog(@"rs:%@",rs);
     
-    const char *hex = "\xe7\xbd\x91\xe5\x9b\xbd";
-    NSString *result = [NSString stringWithCString:hex encoding:NSUTF8StringEncoding];
-    
-    
-    const char *cstring = [@"网国栋" cStringUsingEncoding:NSUTF8StringEncoding];
-    rs = [NSString stringWithCString:cstring encoding:NSUTF8StringEncoding];
-    NSLog(@"rs:%@",rs);
-    
-    
-    rs = hexStrToText(@"dd",NSUTF8StringEncoding);
-    NSLog(@"rs:%@",rs);
-    
-    
-   rs = hexStrToText(@"e7bd91 e59bbd e6a08b",NSUTF8StringEncoding);
-    NSLog(@"rs:%@",rs);
-    
-    rs = hexStrToText(@"517ffd56",NSUnicodeStringEncoding);
+    rs = hexStrToText(@"5   17fE 577",NSUnicodeStringEncoding);
     NSLog(@"rs:%@",rs);
 
+     rs = hexStrToText(@"\\xe7bd91e79fa5",NSUTF8StringEncoding);
         NSLog(@"rs:%@",rs);
     //NSLog(@"result:%@",result);
 	// Do any additional setup after loading the view, typically from a nib.

@@ -63,7 +63,7 @@ NSString * convertNString2GB2000Hex(NSString *inputText)
 
 char * convertHexStrToBytes(const char *str)
 {
-    char *dest = alloca(strlen(str)/2 +3);
+    char *dest = alloca(strlen(str)/2 +1);
     memset(dest, 0, strlen(str)/2 +1);
     int j = 0,temp = 0;
     for(int i=0;i<strlen(str);i++)
@@ -96,11 +96,16 @@ NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
 {
     char *bytes = NULL;
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@"//" withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@"x" withString:@""];    
     str = [str lowercaseString];
     bytes  = convertHexStrToBytes([str UTF8String]);
 
-    NSString *result = [NSString stringWithCString:bytes encoding:encoding];
-
+//    NSString *result = [NSString stringWithCString:bytes encoding:encoding];
+    
+    NSString *result = [[NSString alloc] initWithCString:bytes encoding:encoding]; //可以打印unicode
+    
     return result;
 }
 
