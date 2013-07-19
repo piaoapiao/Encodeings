@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D84797C1797C00A00338FA1 /* EncodeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D84797B1797C00A00338FA1 /* EncodeConvert.m */; };
 		E7448A071796E4C000C63FA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A061796E4C000C63FA0 /* UIKit.framework */; };
 		E7448A091796E4C000C63FA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A081796E4C000C63FA0 /* Foundation.framework */; };
 		E7448A0B1796E4C000C63FA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A0A1796E4C000C63FA0 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D84797A1797C00A00338FA1 /* EncodeConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeConvert.h; sourceTree = "<group>"; };
+		0D84797B1797C00A00338FA1 /* EncodeConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeConvert.m; sourceTree = "<group>"; };
 		E7448A031796E4C000C63FA0 /* Encodeings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encodeings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7448A061796E4C000C63FA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7448A081796E4C000C63FA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 				E7448A1F1796E4C000C63FA0 /* ViewController.m */,
 				E7448A211796E4C000C63FA0 /* ViewController.xib */,
 				E7448A0D1796E4C000C63FA0 /* Supporting Files */,
+				0D84797A1797C00A00338FA1 /* EncodeConvert.h */,
+				0D84797B1797C00A00338FA1 /* EncodeConvert.m */,
 			);
 			path = Encodeings;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7448A131796E4C000C63FA0 /* main.m in Sources */,
+				0D84797C1797C00A00338FA1 /* EncodeConvert.m in Sources */,
 				E7448A171796E4C000C63FA0 /* AppDelegate.m in Sources */,
 				E7448A201796E4C000C63FA0 /* ViewController.m in Sources */,
 			);
@@ -298,6 +304,7 @@
 				E7448A281796E4C000C63FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EncodeConvert.h"
 
 @interface ViewController ()
 
@@ -17,28 +18,64 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *inputText = @"王邓露111";
+    char a = 'd';
+    char *p = &a;
     
     
+    char e = *p;
     
-  // const char *textStr = [inputText UTF8String];
+    char f = p++;
     
-    const char *textStr = [inputText cStringUsingEncoding:NSUTF8StringEncoding];
+    memset(p, 9, 1);
+    
+    memset(p+1,5 , 1);
+    
+    int d = (int)(*++p);
     
     
-    NSString *result = @"";
-    
-    for(int i =0;i<strlen(textStr);i++)
-    {
-        int number = 0;
-        memcpy(&number , textStr +i , 1);
-        int high = number/16;
-        int low = number%16;
-        result =[result stringByAppendingFormat:@"\\x%x%x ",high,low];;
-    }
-    NSLog(@"result:%@",result);
 
-    NSLog(@"result:%@",result);    
+//    const NSStringEncoding *encodings = [NSString availableStringEncodings];
+//    NSMutableString *str = [[NSMutableString alloc] init];
+//    NSStringEncoding encoding;
+//    
+//    while ((encoding = *encodings++) != 0)
+//    {
+//        [str appendFormat: @"%@ === %i\n", [NSString localizedNameOfStringEncoding:encoding], encoding];
+//        NSLog(@"%@",str);
+//    }
+//    
+    NSString *rs = convertNString2UnicodeHex(@"网国栋");
+    NSLog(@"rs:%@",rs);
+    
+    rs = convertNString2UTF8Hex(@"网国栋");
+    NSLog(@"rs:%@",rs);
+    
+    rs = convertNString2GB2000Hex(@"网国栋");
+    NSLog(@"rs:%@",rs);
+    
+    NSLog(@"rs:%@",rs);
+    
+    const char *hex = "\xe7\xbd\x91\xe5\x9b\xbd";
+    NSString *result = [NSString stringWithCString:hex encoding:NSUTF8StringEncoding];
+    
+    
+    const char *cstring = [@"网国栋" cStringUsingEncoding:NSUTF8StringEncoding];
+    rs = [NSString stringWithCString:cstring encoding:NSUTF8StringEncoding];
+    NSLog(@"rs:%@",rs);
+    
+    
+    rs = hexStrToText(@"dd",NSUTF8StringEncoding);
+    NSLog(@"rs:%@",rs);
+    
+    
+   rs = hexStrToText(@"e7bd91 e59bbd e6a08b",NSUTF8StringEncoding);
+    NSLog(@"rs:%@",rs);
+    
+    rs = hexStrToText(@"517ffd56",NSUnicodeStringEncoding);
+    NSLog(@"rs:%@",rs);
+
+        NSLog(@"rs:%@",rs);
+    //NSLog(@"result:%@",result);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
