@@ -103,26 +103,6 @@ NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
     
     bytes  = convertHexStrToBytes([str UTF8String]);
 
-//    NSString *result = [NSString stringWithCString:bytes encoding:encoding];
-    
-  //  char *   newbytes;
-    char *   newbytes = "\xcd\xf8";
-    
-//    if(!strcmp(bytes, newbytes))
-//    {
-//        NSLog(@"same");
-//    }
-//    else
-//    {
-//        NSLog(@"not the same");
-//    }
-    
-//    bytes = malloc(strlen(newbytes)+1);
-//    
-//    memset(bytes, 0, strlen(newbytes)+1);
-//    
-//    strcpy(bytes,newbytes);
-    
     NSString *result = [[NSString alloc] initWithCString:bytes encoding:encoding]; //可以打印unicode,
 
     NSLog(@"result");

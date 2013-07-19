@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "TextToHexViewController.h"
+#import "HexToTextViewController.h"
 
 #import "ViewController.h"
+
+
 
 @implementation AppDelegate
 
@@ -16,8 +20,28 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    TextToHexViewController *textToHexCtrl = [[TextToHexViewController alloc] init];
+    UINavigationController *textToHexNav = [[UINavigationController alloc] initWithRootViewController:textToHexCtrl];
+    textToHexNav.tabBarItem.title = NSLocalizedString(@"textToHex", nil);
+    [textToHexNav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -15)];
+    
+    HexToTextViewController *hexToTextCtrl = [[HexToTextViewController alloc] init];
+    UINavigationController *hexToTextNav = [[UINavigationController alloc] initWithRootViewController:hexToTextCtrl];
+    [hexToTextNav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -15)];    
+    hexToTextNav.tabBarItem.title = NSLocalizedString(@"HexToText", nil);
+    
+    
+    
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    
+    self.tabBarController.viewControllers = @[textToHexNav,hexToTextNav];
+    
+
+    
+    self.window.rootViewController = self.tabBarController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

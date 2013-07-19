@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D84797C1797C00A00338FA1 /* EncodeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D84797B1797C00A00338FA1 /* EncodeConvert.m */; };
+		E7298A2E179991780027E983 /* TextToHexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7298A2D179991780027E983 /* TextToHexViewController.m */; };
+		E7298A31179991990027E983 /* HexToTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7298A30179991990027E983 /* HexToTextViewController.m */; };
+		E7298A34179995090027E983 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7298A33179995090027E983 /* BaseViewController.m */; };
 		E7448A071796E4C000C63FA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A061796E4C000C63FA0 /* UIKit.framework */; };
 		E7448A091796E4C000C63FA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A081796E4C000C63FA0 /* Foundation.framework */; };
 		E7448A0B1796E4C000C63FA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A0A1796E4C000C63FA0 /* CoreGraphics.framework */; };
@@ -24,6 +27,12 @@
 /* Begin PBXFileReference section */
 		0D84797A1797C00A00338FA1 /* EncodeConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeConvert.h; sourceTree = "<group>"; };
 		0D84797B1797C00A00338FA1 /* EncodeConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeConvert.m; sourceTree = "<group>"; };
+		E7298A2C179991780027E983 /* TextToHexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextToHexViewController.h; sourceTree = "<group>"; };
+		E7298A2D179991780027E983 /* TextToHexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToHexViewController.m; sourceTree = "<group>"; };
+		E7298A2F179991990027E983 /* HexToTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexToTextViewController.h; sourceTree = "<group>"; };
+		E7298A30179991990027E983 /* HexToTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexToTextViewController.m; sourceTree = "<group>"; };
+		E7298A32179995090027E983 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E7298A33179995090027E983 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E7448A031796E4C000C63FA0 /* Encodeings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Encodeings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7448A061796E4C000C63FA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7448A081796E4C000C63FA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +95,12 @@
 		E7448A0C1796E4C000C63FA0 /* Encodeings */ = {
 			isa = PBXGroup;
 			children = (
+				E7298A32179995090027E983 /* BaseViewController.h */,
+				E7298A33179995090027E983 /* BaseViewController.m */,
+				E7298A2F179991990027E983 /* HexToTextViewController.h */,
+				E7298A30179991990027E983 /* HexToTextViewController.m */,
+				E7298A2C179991780027E983 /* TextToHexViewController.h */,
+				E7298A2D179991780027E983 /* TextToHexViewController.m */,
 				E7448A151796E4C000C63FA0 /* AppDelegate.h */,
 				E7448A161796E4C000C63FA0 /* AppDelegate.m */,
 				E7448A1E1796E4C000C63FA0 /* ViewController.h */,
@@ -182,6 +197,9 @@
 				0D84797C1797C00A00338FA1 /* EncodeConvert.m in Sources */,
 				E7448A171796E4C000C63FA0 /* AppDelegate.m in Sources */,
 				E7448A201796E4C000C63FA0 /* ViewController.m in Sources */,
+				E7298A2E179991780027E983 /* TextToHexViewController.m in Sources */,
+				E7298A31179991990027E983 /* HexToTextViewController.m in Sources */,
+				E7298A34179995090027E983 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

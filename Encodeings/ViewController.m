@@ -18,33 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    char a = 'd';
-    char *p = &a;
     
-    
-    char e = *p;
-    
-    char f = p++;
-    
-    memset(p, 9, 1);
-    
-    memset(p+1,5 , 1);
-    
-    int d = (int)(*++p);
-    
-    
-
-//    const NSStringEncoding *encodings = [NSString availableStringEncodings];
-//    NSMutableString *str = [[NSMutableString alloc] init];
-//    NSStringEncoding encoding;
-//    
-//    while ((encoding = *encodings++) != 0)
-//    {
-//        [str appendFormat: @"%@ === %i\n", [NSString localizedNameOfStringEncoding:encoding], encoding];
-//        NSLog(@"%@",str);
-//    }
-//
-    
+ //   UITextView *inputText = ;
     
     NSString *rs = convertNString2UnicodeHex(@"网知道");
 //    NSLog(@"rs:%@",rs);
@@ -63,13 +38,10 @@
     
     
     NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-//   rs = hexStrToText(@"cdf8",enc);
-//    char *Cstring = "\xcd\xf8";
-//  rs = [[NSString alloc] initWithCString:Cstring encoding:enc];  
-//    NSLog(@"rs:%@",rs);
     
     rs = hexStrToText(@"cdf8",enc);
         NSLog(@"rs:%@",rs);
+    
     
     rs = hexStrToText(@"5   17fE 577",NSUnicodeStringEncoding);
     NSLog(@"rs:%@",rs);
