@@ -10,7 +10,6 @@
 #import "TextToHexViewController.h"
 #import "HexToTextViewController.h"
 
-#import "ViewController.h"
 
 
 
@@ -21,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    TextToHexViewController *textToHexCtrl = [[TextToHexViewController alloc] init];
+    TextToHexViewController *textToHexCtrl = [[TextToHexViewController alloc] initWithNibName:@"TextToHexViewController" bundle:nil];
     UINavigationController *textToHexNav = [[UINavigationController alloc] initWithRootViewController:textToHexCtrl];
     textToHexNav.tabBarItem.title = NSLocalizedString(@"textToHex", nil);
     [textToHexNav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -15)];

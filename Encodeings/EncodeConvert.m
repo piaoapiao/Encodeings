@@ -8,16 +8,17 @@
 
 #import "EncodeConvert.h"
 
-const char* convertBytes2Hex(const char *bytes)
+const char* convertBytes2Hex(const char *bytes,int len)
 {
     NSString *resultStr = @"";
-    for(int i =0;i<strlen(bytes);i++)
+    for(int i =0;i<len;i++)
     {
         int number = 0;
         memcpy(&number , bytes +i , 1);
         int high = number/16;
         int low = number%16;
-        resultStr =[resultStr stringByAppendingFormat:@"\\x%x%x ",high,low];;
+        resultStr =[resultStr stringByAppendingFormat:@"%x%x ",high,low];
+       // resultStr =[resultStr stringByAppendingFormat:@"\\x%x%x",high,low];
     }
     const char *result = [resultStr cStringUsingEncoding:NSASCIIStringEncoding];
     return result;
@@ -27,19 +28,25 @@ const char* convertBytes2Hex(const char *bytes)
 NSString * convertNString2hex(NSString *inputText,NSStringEncoding encoding)
 {
     const char *textStr = NULL;
+    int len = 0;
     if([inputText canBeConvertedToEncoding:encoding])
     {
-    
          textStr = [inputText cStringUsingEncoding:encoding];
+        len = [inputText lengthOfBytesUsingEncoding:encoding];
+        NSLog(@"textStr len:%d",[inputText lengthOfBytesUsingEncoding:encoding]);
     }
     else
     {
         NSLog(@"convert failed!");
-        NSData *data = [inputText dataUsingEncoding:encoding];
-        textStr = [data bytes];
     }
 
-    const char *result = convertBytes2Hex(textStr);
+    
+    if(encoding == NSUnicodeStringEncoding)
+    {
+        unicodeSwitchOrder((char *)textStr,len);
+    }
+    
+    const char *result = convertBytes2Hex(textStr,len);
 
     return [NSString stringWithFormat:@"%s",result];
 }
@@ -63,8 +70,8 @@ NSString * convertNString2GB2000Hex(NSString *inputText)
 
 char * convertHexStrToBytes(const char *str)
 {
-    char *dest = malloc(strlen(str)/2 +3);
-    memset(dest, 0, strlen(str)/2 +3);
+    char *dest = malloc(strlen(str)/2 +1);
+    memset(dest, 0, strlen(str)/2 +1);
     int j = 0,temp = 0;
     for(int i=0;i<strlen(str);i++)
     {
@@ -108,6 +115,24 @@ NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
     NSLog(@"result");
 
     return result;
+}
+
+void unicodeSwitchOrder(char *str,int len)
+{
+    char temp;
+    for(int i=0;i<len;i++)
+    {
+        if(i%2==0)
+        {
+            memcpy(&temp, str +i, 1);
+
+        }
+        else
+        {
+            memcpy(str + i - 1, str + i, 1);
+            memcpy(str + i, &temp, 1);
+        }
+    }
 }
 
 
