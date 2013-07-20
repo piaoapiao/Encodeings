@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HexToTextViewController : BaseViewController
-
+@property (nonatomic,strong) UILabel *inputLbl;
 @end

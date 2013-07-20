@@ -27,9 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-
+    self.inputTextField.text = @"王露";
+    [self translate:self.inputTextField.text];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -68,35 +68,40 @@ NSString * convertNString2GB2000Hex(NSString *inputText)
 }
 
 
-char * convertHexStrToBytes(const char *str)
+char * convertHexStrToBytes(const char *str,int len)
 {
-    char *dest = malloc(strlen(str)/2 +1);
-    memset(dest, 0, strlen(str)/2 +1);
-    int j = 0,temp = 0;
-    for(int i=0;i<strlen(str);i++)
+    if(str != NULL)
     {
         
-        char c = *(str + i);
-        
-        j++;
-        
-        if(j == 1)
+        char *dest = malloc(len/2 +1);
+        memset(dest, 0, len/2 +1);
+        int j = 0,temp = 0;
+        for(int i=0;i<strlen(str);i++)
         {
-            if ('0' <= c && c <= '9') temp = (c - '0')*16;
-            else if (c >= 'A' && c <= 'F') temp = 16* ( c - 'A' + 10);
-            else if (c >= 'a' && c <= 'f') temp = 16*( c - 'a' + 10);
+            
+            char c = *(str + i);
+            
+            j++;
+            
+            if(j == 1)
+            {
+                if ('0' <= c && c <= '9') temp = (c - '0')*16;
+                else if (c >= 'A' && c <= 'F') temp = 16* ( c - 'A' + 10);
+                else if (c >= 'a' && c <= 'f') temp = 16*( c - 'a' + 10);
+            }
+            else
+            {
+                if ('0' <= c && c <= '9') temp  += (c - '0');
+                else if (c >= 'A' && c <= 'F') temp +=  (c - 'A' + 10);
+                else if (c >= 'a' && c <= 'f') temp +=  (c - 'a' + 10);
+                memset(dest+i/2, temp, 1);
+                j = 0;
+            }
+            
         }
-        else
-        {
-            if ('0' <= c && c <= '9') temp  += (c - '0');
-            else if (c >= 'A' && c <= 'F') temp +=  (c - 'A' + 10);
-            else if (c >= 'a' && c <= 'f') temp +=  (c - 'a' + 10);
-            memset(dest+i/2, temp, 1);
-            j = 0;
-        }
-        
+        return dest;
     }
-    return dest;
+    return NULL;
 }
 
 NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
@@ -108,7 +113,8 @@ NSString * hexStrToText(NSString *str,NSStringEncoding encoding)
     str = [str stringByReplacingOccurrencesOfString:@"x" withString:@""];    
     str = [str lowercaseString];
     
-    bytes  = convertHexStrToBytes([str UTF8String]);
+    int len  = str.length;
+    bytes  = convertHexStrToBytes([str UTF8String],len);
 
     NSString *result = [[NSString alloc] initWithCString:bytes encoding:encoding]; //可以打印unicode,
 

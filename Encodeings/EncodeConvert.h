@@ -25,3 +25,5 @@ char * convertCString2NString(NSString *src,NSStringEncoding encoding);
 NSString * hexStrToText(NSString *str,NSStringEncoding encoding);
 
 void unicodeSwitchOrder(char * str,int len);
+
+char * convertHexStrToBytes(const char *str,int len);
