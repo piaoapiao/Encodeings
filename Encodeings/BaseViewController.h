@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <UITextFieldDelegate,UIGestureRecognizerDelegate>
+@property (nonatomic,strong) IBOutlet  UITextField *inputTextField;
+@property (nonatomic,strong) UIGestureRecognizer *tapGuestRecognizer;
+@property (nonatomic,strong) IBOutlet  UITextView *gbkTextView;
 
+@property (nonatomic,strong) IBOutlet  UITextView *utf8TextView;
+
+@property (nonatomic,strong) IBOutlet  UITextView *unicodeTextView;
 @end

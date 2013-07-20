@@ -29,16 +29,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    UILabel *inputLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
-//    inputLbl.text = NSLocalizedString(@"输入:", nil);
-//    [self.view addSubview:inputLbl];
-//    
-//    self.inputTextView = [[UITextView alloc] initWithFrame:CGRectMake(80, 10, 150, 60)];
+    UILabel *inputLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
+    inputLbl.text = NSLocalizedString(@"输入:", nil);
+    [self.view addSubview:inputLbl];
+    
+    self.inputTextField = [[UITextField alloc] initWithFrame:CGRectMake(80, 10, 150, 60)];
 //    self.inputTextView.layer.borderWidth = 2;
 //    self.inputTextView.layer.borderColor = [[UIColor grayColor] CGColor];
-//    [self.view addSubview:self.inputTextView];
-//    
-//    
+    [self.view addSubview:self.inputTextView];
+    
+    
+    
+    UILabel *gbkLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 60, 60)];
+    gbkLbl.text = NSLocalizedString(@"GBK:", nil);
+    [self.view addSubview:gbkLbl];
+    
+    self.gbkTextView = [[UITextView alloc] initWithFrame:CGRectMake(80, 80, 150, 60)];
+    self.gbkTextView.layer.borderWidth = 2;
+    self.gbkTextView.layer.borderColor = [[UIColor grayColor] CGColor];
+    [self.view addSubview:self.gbkTextView];
+    
 //    UILabel *gbkLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 60, 60)];
 //    gbkLbl.text = NSLocalizedString(@"GBK:", nil);
 //    [self.view addSubview:gbkLbl];
