@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D84797C1797C00A00338FA1 /* EncodeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D84797B1797C00A00338FA1 /* EncodeConvert.m */; };
+		E72445F1179A87670076EDC5 /* TextToHexViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72445F0179A87670076EDC5 /* TextToHexViewController4.xib */; };
 		E7298A31179991990027E983 /* HexToTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7298A30179991990027E983 /* HexToTextViewController.m */; };
 		E7298A34179995090027E983 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7298A33179995090027E983 /* BaseViewController.m */; };
 		E7448A071796E4C000C63FA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7448A061796E4C000C63FA0 /* UIKit.framework */; };
@@ -20,12 +21,13 @@
 		E7448A1B1796E4C000C63FA0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7448A1A1796E4C000C63FA0 /* Default@2x.png */; };
 		E7448A1D1796E4C000C63FA0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7448A1C1796E4C000C63FA0 /* Default-568h@2x.png */; };
 		E7A5AB75179A1C1C00D3EF51 /* TextToHexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5AB73179A1C1C00D3EF51 /* TextToHexViewController.m */; };
-		E7A5AB76179A1C1C00D3EF51 /* TextToHexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController.xib */; };
+		E7A5AB76179A1C1C00D3EF51 /* TextToHexViewController5.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController5.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D84797A1797C00A00338FA1 /* EncodeConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeConvert.h; sourceTree = "<group>"; };
 		0D84797B1797C00A00338FA1 /* EncodeConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeConvert.m; sourceTree = "<group>"; };
+		E72445F0179A87670076EDC5 /* TextToHexViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextToHexViewController4.xib; path = ../TextToHexViewController4.xib; sourceTree = "<group>"; };
 		E7298A2F179991990027E983 /* HexToTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexToTextViewController.h; sourceTree = "<group>"; };
 		E7298A30179991990027E983 /* HexToTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexToTextViewController.m; sourceTree = "<group>"; };
 		E7298A32179995090027E983 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -45,7 +47,8 @@
 		E7448A1C1796E4C000C63FA0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E7A5AB72179A1C1C00D3EF51 /* TextToHexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextToHexViewController.h; sourceTree = "<group>"; };
 		E7A5AB73179A1C1C00D3EF51 /* TextToHexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToHexViewController.m; sourceTree = "<group>"; };
-		E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextToHexViewController.xib; sourceTree = "<group>"; };
+		E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextToHexViewController5.xib; sourceTree = "<group>"; };
+		E7B91D26179A85AB00DF5B97 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +106,9 @@
 				0D84797B1797C00A00338FA1 /* EncodeConvert.m */,
 				E7A5AB72179A1C1C00D3EF51 /* TextToHexViewController.h */,
 				E7A5AB73179A1C1C00D3EF51 /* TextToHexViewController.m */,
-				E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController.xib */,
+				E72445F0179A87670076EDC5 /* TextToHexViewController4.xib */,
+				E7A5AB74179A1C1C00D3EF51 /* TextToHexViewController5.xib */,
+				E7B91D26179A85AB00DF5B97 /* AppMacro.h */,
 			);
 			path = Encodeings;
 			sourceTree = "<group>";
@@ -177,7 +182,8 @@
 				E7448A191796E4C000C63FA0 /* Default.png in Resources */,
 				E7448A1B1796E4C000C63FA0 /* Default@2x.png in Resources */,
 				E7448A1D1796E4C000C63FA0 /* Default-568h@2x.png in Resources */,
-				E7A5AB76179A1C1C00D3EF51 /* TextToHexViewController.xib in Resources */,
+				E7A5AB76179A1C1C00D3EF51 /* TextToHexViewController5.xib in Resources */,
+				E72445F1179A87670076EDC5 /* TextToHexViewController4.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +279,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encodeings/Encodeings-Prefix.pch";
 				INFOPLIST_FILE = "Encodeings/Encodeings-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -284,6 +291,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Encodeings/Encodeings-Prefix.pch";
 				INFOPLIST_FILE = "Encodeings/Encodeings-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

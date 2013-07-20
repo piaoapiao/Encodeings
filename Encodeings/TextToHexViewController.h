@@ -8,11 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface TextToHexViewController : BaseViewController <UITextFieldDelegate>
+@interface TextToHexViewController : BaseViewController <UITextFieldDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) IBOutlet  UITextField *inputTextField;
-
-@property (nonatomic,strong) IBOutlet  UIButton   *convertBtn;
 
 @property (nonatomic,strong) IBOutlet  UITextView *gbkTextView;
 
@@ -22,5 +20,4 @@
 
 @property (nonatomic,strong) UIGestureRecognizer *tapGuestRecognizer;
 
--(IBAction)convertToHex:(id)sender;
 @end

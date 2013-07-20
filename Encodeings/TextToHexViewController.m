@@ -27,8 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.gbkTextView.editable = NO;
+    self.unicodeTextView.editable = NO;
+    self.utf8TextView.editable = NO;
+    
     self.inputTextField.delegate = self;
     self.tapGuestRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDown:)];
+    self.tapGuestRecognizer.delegate = self;
     [self.view addGestureRecognizer:self.tapGuestRecognizer];
     // Do any additional setup after loading the view from its nib.
 }
@@ -52,22 +57,12 @@
     self.unicodeTextView.text = convertNString2UnicodeHex(text);
 }
 
--(IBAction)convertToHex:(id)sender
-{
-    NSLog(@"convert");
-    [self translate:self.inputTextField.text];
-
-}
-
 #pragma mark -- UITextViewDelegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-  
      
     NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    
-    NSLog(@"text:%@",text);
     
     [self translate:text];
     return YES;
@@ -75,9 +70,19 @@
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField
 {
+    NSLog(@"clear");
     [self translate:nil];
     return YES;
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UIControl class]]) {
+        // we touched a button, slider, or other UIControl
+        return NO; // ignore the touch
+    }
+    return YES; // handle the touch
+}
+
 
 
 
