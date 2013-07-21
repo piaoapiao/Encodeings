@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MobClick.h"
 #import "TextToHexViewController.h"
 #import "HexToTextViewController.h"
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [MobClick startWithAppkey:@"51eb53c256240b22bf03488c"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
