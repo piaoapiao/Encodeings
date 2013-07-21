@@ -27,12 +27,12 @@
     }
     else
     {
-     textToHexCtrl = [[TextToHexViewController alloc] initWithNibName:@"TextToHexViewController4" bundle:nil];    
+     textToHexCtrl = [[TextToHexViewController alloc] initWithNibName:@"TextToHexViewController5" bundle:nil];    
     }
 
     
     UINavigationController *textToHexNav = [[UINavigationController alloc] initWithRootViewController:textToHexCtrl];
-    textToHexNav.tabBarItem.title = NSLocalizedString(@"textToHex", nil);
+    textToHexNav.tabBarItem.title = NSLocalizedString(@"TextToHex", nil);
     [textToHexNav.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -15)];
     
     HexToTextViewController *hexToTextCtrl = [[HexToTextViewController alloc] init];

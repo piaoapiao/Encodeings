@@ -30,50 +30,59 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UILabel *inputLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 60, 30)];
-    inputLbl.text = NSLocalizedString(@"输入:", nil);
+    
+    
+    UILabel *inputLbl =  [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 76, 40)];
+    inputLbl.textAlignment = NSTextAlignmentCenter;
+    inputLbl.text = NSLocalizedString(@"Input:", nil);
     [self.view addSubview:inputLbl];
     
-//    self.inputTextField = [[UITextField alloc] initWithFrame:CGRectMake(80, 10, 230, 30)];
-//    self.inputTextField.borderStyle = UITextBorderStyleRoundedRect;
-//    self.inputTextField.clearButtonMode = UITextBorderStyleNone;
-//    self.inputTextField.delegate = self;
-//    [self.inputTextField setEnabled:NO];
-//    self.inputTextField.keyboardType = UIKeyboardTypePhonePad;
-//    [self.view addSubview:self.inputTextField];
+    self.inputTextField = [[UITextField alloc] initWithFrame:CGRectMake(76, 20, 235, 30)];
+    self.inputTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.inputTextField.clearButtonMode = UITextFieldViewModeAlways;
+    self.inputTextField.delegate = self;
+    [self.view addSubview:self.inputTextField];
+    
 
-    self.inputLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, 230, 30)];
-    self.inputLbl.layer.backgroundColor = [[UIColor grayColor] CGColor];
-    self.inputLbl.layer.borderWidth = 1;
-    [self.view addSubview:self.inputLbl];
+
+//    self.inputLbl = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, 230, 30)];
+//    self.inputLbl.layer.backgroundColor = [[UIColor grayColor] CGColor];
+//    self.inputLbl.layer.borderWidth = 1;
+//    [self.view addSubview:self.inputLbl];
     
     
-    UILabel *gbkLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 60, 30)];
+    UILabel *gbkLbl =  [[UILabel alloc] initWithFrame:CGRectMake(0, 78,76,43)];
+    gbkLbl.textAlignment = NSTextAlignmentCenter;    
     gbkLbl.text = NSLocalizedString(@"GBK:", nil);
     [self.view addSubview:gbkLbl];
     
-    self.gbkTextView = [[UITextView alloc] initWithFrame:CGRectMake(80, 50, 230, 30)];
-    self.gbkTextView.backgroundColor = [UIColor greenColor];
+    self.gbkTextView = [[UITextView alloc] initWithFrame:CGRectMake(76,68,235, 53)];
+    self.gbkTextView.backgroundColor = [UIColor grayColor];
     self.gbkTextView.editable = NO;
     [self.view addSubview:self.gbkTextView];
     
-    UILabel *unicodeLbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 100, 30)];
+    UILabel *unicodeLbl =  [[UILabel alloc] initWithFrame:CGRectMake(0,147,76,42)];
+    unicodeLbl.textAlignment = NSTextAlignmentCenter;     
     unicodeLbl.text = NSLocalizedString(@"Unicode:", nil);
     [self.view addSubview:unicodeLbl];
     
-    self.unicodeTextView = [[UITextView alloc] initWithFrame:CGRectMake(80, 100, 230, 30)];
-    self.unicodeTextView.backgroundColor = [UIColor greenColor];
+    self.unicodeTextView = [[UITextView alloc] initWithFrame:CGRectMake(76,141,234,53)];
+    self.unicodeTextView.backgroundColor = [UIColor grayColor];
     self.unicodeTextView.editable = NO;    
     [self.view addSubview:self.unicodeTextView];
     
-    UILabel *utf8Lbl =  [[UILabel alloc] initWithFrame:CGRectMake(10, 150, 100, 30)];
+    UILabel *utf8Lbl =  [[UILabel alloc] initWithFrame:CGRectMake(0,219,76,47)];
+    utf8Lbl.textAlignment = NSTextAlignmentCenter;       
     utf8Lbl.text = NSLocalizedString(@"UTF-8:", nil);
     [self.view addSubview:utf8Lbl];
     
-    self.utf8TextView = [[UITextView alloc] initWithFrame:CGRectMake(80, 150, 230, 30)];
-    self.utf8TextView.backgroundColor = [UIColor greenColor];
+    self.utf8TextView = [[UITextView alloc] initWithFrame:CGRectMake(76,213,235,53)];
+    self.utf8TextView.backgroundColor = [UIColor grayColor];
     self.utf8TextView.editable = NO;        
     [self.view addSubview:self.utf8TextView];
+    
+    self.inputTextField.text = @"616263313233";
+    [self translate:self.inputTextField.text];
     
 //    UIButton *number1Btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 190, 30, 30)];
 //    number1Btn.tag = 1;
@@ -160,33 +169,33 @@
 //    NSLog(@"test");
 //}
 
--(void)viewWillLayoutSubviews
-{
-    int row = 0,line = 0;
-    for(int i =0;i<16;i++)
-    {
-        row = i/4;
-        line = i%4;
-        UIButton *number1Btn = [[UIButton alloc] initWithFrame:CGRectMake(32 +70*line , 190 + 50*row, 40, 40)];
-        number1Btn.tag = i;
-        number1Btn.backgroundColor = [UIColor redColor];
-        if(i<=9)
-        {
-
-            [number1Btn setTitle:[NSString stringWithFormat:@"%d",number1Btn.tag] forState:UIControlStateNormal];
-        }
-        else
-        {
-            char temp = 'A';
-            temp = temp + i -10;
-            [number1Btn setTitle:[NSString stringWithFormat:@"%c",temp] forState:UIControlStateNormal];
-        }
-
-        [number1Btn addTarget:self action:@selector(clickNumber:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:number1Btn];
-    }
-    
-}
+//-(void)viewWillLayoutSubviews
+//{
+//    int row = 0,line = 0;
+//    for(int i =0;i<16;i++)
+//    {
+//        row = i/4;
+//        line = i%4;
+//        UIButton *number1Btn = [[UIButton alloc] initWithFrame:CGRectMake(32 +70*line , 190 + 50*row, 40, 40)];
+//        number1Btn.tag = i;
+//        number1Btn.backgroundColor = [UIColor redColor];
+//        if(i<=9)
+//        {
+//
+//            [number1Btn setTitle:[NSString stringWithFormat:@"%d",number1Btn.tag] forState:UIControlStateNormal];
+//        }
+//        else
+//        {
+//            char temp = 'A';
+//            temp = temp + i -10;
+//            [number1Btn setTitle:[NSString stringWithFormat:@"%c",temp] forState:UIControlStateNormal];
+//        }
+//
+//        [number1Btn addTarget:self action:@selector(clickNumber:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:number1Btn];
+//    }
+//    
+//}
 
 
 

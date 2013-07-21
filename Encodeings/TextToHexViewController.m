@@ -29,6 +29,9 @@
     [super viewDidLoad];
     self.inputTextField.text = @"王露";
     [self translate:self.inputTextField.text];
+    self.gbkTextView.backgroundColor = [UIColor grayColor];
+    self.unicodeTextView.backgroundColor = [UIColor grayColor];
+    self.utf8TextView.backgroundColor = [UIColor grayColor];
     // Do any additional setup after loading the view from its nib.
 }
 

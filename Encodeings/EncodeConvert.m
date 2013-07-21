@@ -41,10 +41,10 @@ NSString * convertNString2hex(NSString *inputText,NSStringEncoding encoding)
     }
 
     
-    if(encoding == NSUnicodeStringEncoding)
-    {
-        unicodeSwitchOrder((char *)textStr,len);
-    }
+//    if(encoding == NSUnicodeStringEncoding)
+//    {
+//        unicodeSwitchOrder((char *)textStr,len);   //程序小段排序,不转换了
+//    }
     
     const char *result = convertBytes2Hex(textStr,len);
 
