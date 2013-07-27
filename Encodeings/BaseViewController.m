@@ -82,4 +82,22 @@
 
 }
 
+-(BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+    
+}
+
+
 @end

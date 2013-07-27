@@ -8,6 +8,13 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon-Small</string>
+		<string>icon</string>
+		<string>icon.png</string>
+		<string>icon@2x.png</string>
+	</array>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
@@ -16,11 +23,13 @@
 			<array>
 				<string>Icon-Small</string>
 				<string>icon</string>
+				<string>icon.png</string>
+				<string>icon@2x.png</string>
 			</array>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.ziyun.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.baiyun.encodeConverter</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
